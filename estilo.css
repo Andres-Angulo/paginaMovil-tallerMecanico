@@ -1,0 +1,415 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: #222933;
+}
+
+@media screen and (max-width: 375px){
+
+
+  header{
+    text-align: center;
+  }
+
+  header img{
+    width: 300px;
+  }
+
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+  }
+
+  nav div{
+    display: flex;
+    align-items: center;
+  }
+  
+  .telefono{
+    color: #1FAEFC;
+    margin-right: 10px;
+  }
+
+  nav div p{
+    font-weight: bold;
+  }
+
+  #menu{
+    color: white;
+    padding: 5px;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .6);
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    z-index: 100;
+    transition: all .3s;
+  }
+
+  nav ul.abrirmenu{
+    left: 0px;
+  }
+
+  nav ul li{
+    width: 100%;
+  }
+
+  nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px white dotted;
+    padding: 10px;
+  }
+
+  .rslides{
+    width: 375px;
+    height: 450px;
+    position: relative; 
+    list-style: none;
+    overflow: hidden;
+  }
+
+  .rslides li{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .rslides li img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .contenedor_slide{
+    position: relative;
+  }
+
+  .texto_slide{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+    text-align: center;
+    width: 50%;
+  }
+
+  .texto_slide h2{
+    margin-bottom: 20px;
+  }
+
+  .texto_slide a{
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #1FAEFC;
+    border-top: 6px #8CD3FE inset;
+    margin-top: 30px;
+    border-radius: 5px;
+  }
+
+  .rslides_nav{
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);  
+    z-index: 5;
+  }
+
+  .prev{
+    left: 0;
+  }
+
+  .next{
+    right: 0;
+  }
+
+  .contenedormodal{
+    width: 100%;
+    height: 100%;
+    background-color: #1FAEFC;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px 20px;
+    display: none;
+    border-top: 6px #8CD3FD inset;
+  }
+  
+  .contenidomodal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .contenidomodal h3{
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .contenidomodal input, select{
+    margin-bottom: 20px;
+    width: 90%;
+    padding: 10px;
+  }
+
+  .contenidomodal div{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .contenidomodal input[type="time"]{
+    width: 55%;
+    margin-bottom: 0px;
+  }
+
+  #enviar{
+    background-color: #222933;
+    border-radius: 50px;
+    color: white;
+    margin-top: 20px;
+  }
+
+  .cerrar{
+    cursor: pointer;
+    color: red;
+    font-size: 26px;
+    transition: all .4s;
+    position: absolute;
+    top: -20px;
+    right: -10px;
+  }
+
+  .seccion_servicios{
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+
+  .titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titulo h2{
+    font-size: 40px;
+  }
+  
+  .titulo hr{
+    width: 40px;
+    border: 2px #1FAEFC solid;
+    margin-bottom: 20px;
+  }
+
+  .titulo p{
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .seccion_servicios article{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+  }
+
+  .seccion_servicios article img{
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  .contenido_servicios{
+    display: none;
+  }
+
+  h4{
+    color: #1FAEFC;
+    margin-bottom: 10px;
+  }
+
+  .seccion_paquetes{
+    background-color: #222933;
+    color: white;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+
+  .precio{
+    color: #1FAEFC;
+    margin-left: 10px;
+  }
+
+  .seccion_paquetes article{
+    padding: 30px 0px;
+  }
+
+  .seccion_paquetes article div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+
+  #carrusel{
+    background-color: #1FAEFC;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .flechas{
+    align-self: flex-end;
+  }
+
+  .botones{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    color: black;
+    background-color: white;
+    margin: 10px;
+  }
+
+  .viewport{
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .overview{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; 
+    display: flex;
+    align-items: stretch;
+  }
+
+  .cards{
+    width: 310px;
+    margin: 0px 10px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .cards img{
+    width: 90%;
+    margin: auto;
+  }
+
+  .seccion_galeria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .fotos{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 20px;
+  }
+
+  .fotos a{
+    display: inline-block;
+    width: 48%;
+    height: 150px;
+  }
+
+  .fotos a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  footer{
+    background-color: #222933;
+    border-bottom: 10px #1FAEFC solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    font-size: 12px;
+  }  
+
+  footer div{ 
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  footer div i {
+    color: #1FAEFC;
+    margin-right: 10px;
+  }
+
+  .redes{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .redes i{
+    color: #ccc;
+  }
+
+  #flecha{
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+    background-color: #1FAEFC;
+    position: fixed;
+    z-index: 100;
+    bottom: 10px;
+    right: 10px;
+  }
+
+
+
+
+
+
+
+
+}
